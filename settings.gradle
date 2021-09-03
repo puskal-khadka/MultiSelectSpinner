@@ -1,0 +1,4 @@
+rootProject.name = "MultiSelectSpinnerDemo"
+include ':app'
+include ':MultiSelectSpinner'
+include ':MultiSelectSpinner'
