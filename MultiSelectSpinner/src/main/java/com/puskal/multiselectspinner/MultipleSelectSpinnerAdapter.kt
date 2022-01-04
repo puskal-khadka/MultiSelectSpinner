@@ -18,6 +18,8 @@ class MultipleSelectSpinnerAdapter(
     val dataList: ArrayList<MultipleSelectSpinnerPojo>,
     val showSelectTitleHeading: Boolean = true,
     val isShowSelect: Boolean = true,
+    var placeholderText:String,
+    var confirmTextColor: Int,
     var checkedListener: (ArrayList<MultipleSelectSpinnerPojo>) -> Unit
 ) : ArrayAdapter<MultipleSelectSpinnerPojo>(myContext, resource, dataList) {
     var tempList= arrayListOf<MultipleSelectSpinnerPojo>()
@@ -38,7 +40,7 @@ class MultipleSelectSpinnerAdapter(
             returnView = LayoutInflater.from(myContext)
                 .inflate(android.R.layout.simple_spinner_dropdown_item, null)
             val text = returnView.findViewById<CheckedTextView>(android.R.id.text1)
-            text.text = "Select options"
+            text.text = placeholderText
         } else {
             viewHolder = convertView.getTag() as VH?
         }
@@ -75,12 +77,7 @@ class MultipleSelectSpinnerAdapter(
 
         if (position == dataList.size - 1) {
             viewHolder!!.isSelected.visibility = View.GONE
-            viewHolder.myText.setTextColor(
-                ContextCompat.getColor(
-                    viewHolder.myText.context,
-                    android.R.color.holo_green_dark
-                )
-            )
+            viewHolder.myText.setTextColor(confirmTextColor)
             viewHolder.myText.apply {
                 setPadding(0, 30, 0, 30)
                 textSize = 14F

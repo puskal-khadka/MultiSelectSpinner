@@ -38,6 +38,10 @@
             app:layout_constraintTop_toTopOf="@+id/tv2"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="8dp"
+            app:placeholder_text="Select options"
+            app:dropdown_footerConfirm_text="Ok"
+            app:dropdown_headerSelectAll_text="All"
+            app:confirmTextColor="#669900"
             />
 
         <TextView
