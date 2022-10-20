@@ -10,7 +10,7 @@ Android Library for Dropdown MultiSelect Spinner functionality
 ```bash
 dependencies {
     ...
-    implementation 'com.github.puskal-khadka:MultiSelectSpinner:1.0.0'
+    implementation 'com.github.puskal-khadka:MultiSelectSpinner:1.0.1'
 }
 ```
 
